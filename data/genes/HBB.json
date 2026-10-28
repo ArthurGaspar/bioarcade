@@ -1,0 +1,968 @@
+{
+ "symbol": "HBB",
+ "geneId": "ENSG00000244734",
+ "transcriptId": "ENST00000335295",
+ "chromosome": "11",
+ "strand": -1,
+ "cdsLength": 444,
+ "proteinLength": 147,
+ "proteinStart": "MVHLTPEEKSAVTALWGKVNVDEVGGEALG",
+ "exons": [
+  {
+   "number": 1,
+   "length": 142,
+   "codingLength": 92,
+   "cdsOffset": 0
+  },
+  {
+   "number": 2,
+   "length": 223,
+   "codingLength": 223,
+   "cdsOffset": 92
+  },
+  {
+   "number": 3,
+   "length": 263,
+   "codingLength": 129,
+   "cdsOffset": 315
+  }
+ ],
+ "guidesFound": 68,
+ "guides": [
+  {
+   "spacer": "GTAACGGCAGACTTCTCCTC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 21,
+   "exon": 1,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "GTGAACGTGGATGAAGTTGG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 71,
+   "exon": 1,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 50% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    1,
+    0
+   ],
+   "specificity": 81
+  },
+  {
+   "spacer": "GAGGTTCTTTGAGTCCTTTG",
+   "pam": "GGG",
+   "strand": "+",
+   "cut": 136,
+   "exon": 2,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 45% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "GCCCATAACAGCATCAGGAG",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 154,
+   "exon": 2,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "GGGTTGCCCATAACAGCATC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 159,
+   "exon": 2,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "GTGTGGCAAAGGTGCCCTTG",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 248,
+   "exon": 2,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "GCACTGTGACAAGCTGCACG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 292,
+   "exon": 2,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "specificity": 85
+  },
+  {
+   "spacer": "GCAGGCTGCCTATCAGAAAG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 397,
+   "exon": 3,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "2 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    2,
+    1,
+    1
+   ],
+   "specificity": 65
+  },
+  {
+   "spacer": "GGCTGCCTATCAGAAAGTGG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 400,
+   "exon": 3,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "specificity": 84
+  },
+  {
+   "spacer": "GCCTATCAGAAAGTGGTGGC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 404,
+   "exon": 3,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "specificity": 84
+  },
+  {
+   "spacer": "GGCTGGTGTGGCTAATGCCC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 421,
+   "exon": 3,
+   "in_cds": true,
+   "score": 90,
+   "reasons": [
+    "GC content 65% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "CATGGTGCATCTGACTCCTG",
+   "pam": "AGG",
+   "strand": "+",
+   "cut": 16,
+   "exon": 1,
+   "in_cds": false,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "AGTCTGCCGTTACTGCCCTG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 42,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "TCTGCCGTTACTGCCCTGTG",
+   "pam": "GGG",
+   "strand": "+",
+   "cut": 44,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "CCACGTTCACCTTGCCCCAC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 47,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 65% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "2 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    2,
+    0,
+    2
+   ],
+   "specificity": 68
+  },
+  {
+   "spacer": "CCTGTGGGGCAAGGTGAACG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 58,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 65% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "2 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    2,
+    0,
+    1
+   ],
+   "specificity": 69
+  },
+  {
+   "spacer": "CGTGGATGAAGTTGGTGGTG",
+   "pam": "AGG",
+   "strand": "+",
+   "cut": 76,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "specificity": 85
+  },
+  {
+   "spacer": "TGAAGTTGGTGGTGAGGCCC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 82,
+   "exon": 1,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    1,
+    0
+   ],
+   "specificity": 81
+  },
+  {
+   "spacer": "TGGTCTACCCTTGGACCCAG",
+   "pam": "AGG",
+   "strand": "+",
+   "cut": 117,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "0 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "specificity": 96
+  },
+  {
+   "spacer": "CAAAGGACTCAAAGAACCTC",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 122,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 45% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (3 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    3
+   ],
+   "specificity": 97
+  },
+  {
+   "spacer": "CGGTGCCTTTAGTGATGGCC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 223,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "specificity": 84
+  },
+  {
+   "spacer": "TGAGGTTGTCCAGGTGAGCC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 230,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (2 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    2
+   ],
+   "specificity": 98
+  },
+  {
+   "spacer": "TAGTGATGGCCTGGCTCACC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 232,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (2 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    2
+   ],
+   "specificity": 98
+  },
+  {
+   "spacer": "AGGTGCCCTTGAGGTTGTCC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 239,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    3
+   ],
+   "specificity": 82
+  },
+  {
+   "spacer": "ACAGTGCAGCTCACTCAGTG",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 265,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (2 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    2
+   ],
+   "specificity": 98
+  },
+  {
+   "spacer": "ACGTGGATCCTGAGAACTTC",
+   "pam": "AGG",
+   "strand": "+",
+   "cut": 309,
+   "exon": 2,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 50% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "CACAGACCAGCACGTTGCCC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 323,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 65% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (3 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    3
+   ],
+   "specificity": 97
+  },
+  {
+   "spacer": "CAACGTGCTGGTCTGTGTGC",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 340,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "0 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "specificity": 96
+  },
+  {
+   "spacer": "ATAGGCAGCCTGCACTGGTG",
+   "pam": "GGG",
+   "strand": "-",
+   "cut": 376,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "0 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "specificity": 96
+  },
+  {
+   "spacer": "TGATAGGCAGCCTGCACTGG",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 378,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "0 coding site(s) at 1 mismatch and 1 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "specificity": 96
+  },
+  {
+   "spacer": "AGAATTCACCCCACCAGTGC",
+   "pam": "AGG",
+   "strand": "+",
+   "cut": 379,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "no coding site within 2 mismatches (1 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "specificity": 99
+  },
+  {
+   "spacer": "TTCTGATAGGCAGCCTGCAC",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 381,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "specificity": 84
+  },
+  {
+   "spacer": "TCAGAAAGTGGTGGCTGGTG",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 409,
+   "exon": 3,
+   "in_cds": true,
+   "score": 85,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    2
+   ],
+   "specificity": 83
+  },
+  {
+   "spacer": "CTTAGTGATACTTGTGGGCC",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 428,
+   "exon": 3,
+   "in_cds": false,
+   "score": 85,
+   "reasons": [
+    "GC content 50% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "matches 1 other coding site(s) perfectly, which is disqualifying"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 60
+  },
+  {
+   "spacer": "AGCGAGCTTAGTGATACTTG",
+   "pam": "TGG",
+   "strand": "-",
+   "cut": 434,
+   "exon": 3,
+   "in_cds": false,
+   "score": 85,
+   "reasons": [
+    "GC content 45% is in the 40-70% sweet spot (+15)",
+    "G or C right next to the PAM helps binding (+10)",
+    "matches 1 other coding site(s) perfectly, which is disqualifying"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 60
+  },
+  {
+   "spacer": "GTCTGCCGTTACTGCCCTGT",
+   "pam": "GGG",
+   "strand": "+",
+   "cut": 43,
+   "exon": 1,
+   "in_cds": true,
+   "score": 80,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  },
+  {
+   "spacer": "GAAGTTGGTGGTGAGGCCCT",
+   "pam": "GGG",
+   "strand": "+",
+   "cut": 83,
+   "exon": 1,
+   "in_cds": true,
+   "score": 80,
+   "reasons": [
+    "GC content 60% is in the 40-70% sweet spot (+15)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    2
+   ],
+   "specificity": 83
+  },
+  {
+   "spacer": "GTCCACTCCTGATGCTGTTA",
+   "pam": "TGG",
+   "strand": "+",
+   "cut": 163,
+   "exon": 2,
+   "in_cds": true,
+   "score": 80,
+   "reasons": [
+    "GC content 50% is in the 40-70% sweet spot (+15)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "specificity": 85
+  },
+  {
+   "spacer": "GCTCATGGCAAGAAAGTGCT",
+   "pam": "CGG",
+   "strand": "+",
+   "cut": 203,
+   "exon": 2,
+   "in_cds": true,
+   "score": 80,
+   "reasons": [
+    "GC content 50% is in the 40-70% sweet spot (+15)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "1 coding site(s) at 1 mismatch and 0 at 2, which can be cut by mistake"
+   ],
+   "offTargets": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "specificity": 85
+  },
+  {
+   "spacer": "GTGAGCCAGGCCATCACTAA",
+   "pam": "AGG",
+   "strand": "-",
+   "cut": 217,
+   "exon": 2,
+   "in_cds": true,
+   "score": 80,
+   "reasons": [
+    "GC content 55% is in the 40-70% sweet spot (+15)",
+    "starts with G, the U6 promoter's preferred first base (+5)",
+    "no coding site within 2 mismatches (0 at 3), so it is specific"
+   ],
+   "offTargets": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "specificity": 100
+  }
+ ],
+ "windows": [
+  {
+   "exon": 3,
+   "start": 5,
+   "seq": "GGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCACCCCACCAGTGCAGGCTGCCTA",
+   "pams": [
+    {
+     "pos": 23,
+     "strand": "+"
+    },
+    {
+     "pos": 26,
+     "strand": "-"
+    },
+    {
+     "pos": 27,
+     "strand": "-"
+    },
+    {
+     "pos": 36,
+     "strand": "+"
+    },
+    {
+     "pos": 62,
+     "strand": "+"
+    }
+   ]
+  },
+  {
+   "exon": 3,
+   "start": 5,
+   "seq": "GGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCACCCCACCAGTGCAGGCTGCCTA",
+   "pams": [
+    {
+     "pos": 23,
+     "strand": "+"
+    },
+    {
+     "pos": 26,
+     "strand": "-"
+    },
+    {
+     "pos": 27,
+     "strand": "-"
+    },
+    {
+     "pos": 36,
+     "strand": "+"
+    },
+    {
+     "pos": 62,
+     "strand": "+"
+    }
+   ]
+  },
+  {
+   "exon": 3,
+   "start": 5,
+   "seq": "GGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCACCCCACCAGTGCAGGCTGCCTA",
+   "pams": [
+    {
+     "pos": 23,
+     "strand": "+"
+    },
+    {
+     "pos": 26,
+     "strand": "-"
+    },
+    {
+     "pos": 27,
+     "strand": "-"
+    },
+    {
+     "pos": 36,
+     "strand": "+"
+    },
+    {
+     "pos": 62,
+     "strand": "+"
+    }
+   ]
+  }
+ ],
+ "analyzedAt": "2026-10-28T23:31:11+00:00"
+}
