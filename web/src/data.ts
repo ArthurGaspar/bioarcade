@@ -63,6 +63,51 @@ export interface Round {
   seconds: number;
 }
 
+export interface DuelRound {
+  gene: string;
+  chromosome: string;
+  exon: number;
+  lesson: "sequence" | "specificity";
+  guides: [Guide, Guide];
+  winner: 0 | 1;
+}
+
+export type Verdict = "pathogenic" | "benign" | "uncertain";
+
+export interface CodonRound {
+  gene: string;
+  transcriptId: string;
+  chromosome: string;
+  exon: number;
+  cdsStart: number;
+  seq: string;
+  protein: string;
+  quizCodons: number;
+  seconds: number;
+}
+
+export interface VerdictRound {
+  id: string;
+  gene: string;
+  transcript: string;
+  dna: string;
+  protein: string;
+  context: string;
+  classification: string;
+  verdict: Verdict;
+  accession: string;
+  scope: string;
+  reviewStatus: string;
+  sourceUrl: string;
+  clues: { title: string; text: string }[];
+  explanation: string;
+}
+
+export interface VerdictSnapshot {
+  reviewedAt: string;
+  rounds: VerdictRound[];
+}
+
 interface Rule {
   id: string;
   points: number;

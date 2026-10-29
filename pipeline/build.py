@@ -13,6 +13,8 @@ from pathlib import Path
 from . import catalog, offtargets
 from .analyze import CHECKED_PER_GENE, WINDOW_NT
 from .guides import BASE_SCORE, RULES
+from .variants import verdict_rounds
+from .codons import codon_runner_rounds
 
 ROOT = Path(__file__).resolve().parent.parent
 GENES = ROOT / "data" / "genes"
@@ -59,6 +61,51 @@ def pam_hunter_rounds(genes: list[dict]) -> list[dict]:
     return picked
 
 
+def guide_duel_rounds(genes: list[dict]) -> list[dict]:
+    """Unambiguous same-exon pairs: the winner is no worse on either metric.
+
+    Alternate sequence lessons with equal-score specificity lessons. Only fully
+    coding guides qualify, since guides outside the exome index have misleading
+    specificity. Prefer large differences, different genes and unused guides.
+    """
+    pools = {"sequence": [], "specificity": []}
+    for gene in sorted(genes, key=lambda g: g["symbol"]):
+        guides = sorted(gene["guides"], key=lambda g: (g["exon"], g["cut"], g["strand"]))
+        for a in guides:
+            for b in guides:
+                if not (a["in_cds"] and b["in_cds"]) or a["exon"] != b["exon"] or a["spacer"] == b["spacer"]:
+                    continue
+                score_gap = a["score"] - b["score"]
+                spec_gap = a["specificity"] - b["specificity"]
+                if score_gap < 0 or spec_gap < 0 or score_gap + spec_gap == 0:
+                    continue
+                lesson = "sequence" if score_gap > 0 else "specificity"
+                gap = score_gap if score_gap > 0 else spec_gap
+                pools[lesson].append((gap, gene, a, b))
+
+    picked, used_genes, used_guides = [], set(), set()
+    for i in range(ROUNDS):
+        lesson = "sequence" if i % 2 == 0 else "specificity"
+        candidates = [
+            pair for pair in pools[lesson]
+            if all((pair[1]["symbol"], g["spacer"]) not in used_guides for g in pair[2:])
+        ]
+        if not candidates:
+            continue
+        candidates.sort(key=lambda p: (p[1]["symbol"] in used_genes, -p[0], p[1]["symbol"], p[2]["cut"], p[3]["cut"]))
+        _, gene, winner, other = candidates[0]
+        winner_index = len(picked) % 2
+        picked.append({
+            "gene": gene["symbol"], "chromosome": gene["chromosome"],
+            "exon": winner["exon"], "lesson": lesson,
+            "guides": [winner, other] if winner_index == 0 else [other, winner],
+            "winner": winner_index,
+        })
+        used_genes.add(gene["symbol"])
+        used_guides.update((gene["symbol"], g["spacer"]) for g in (winner, other))
+    return picked
+
+
 def main() -> None:
     genes = load_all()
     stories = catalog.BY_SYMBOL
@@ -85,6 +132,9 @@ def main() -> None:
         g["guides"].sort(key=lambda x: (-x["score"], -x["specificity"], x["cut"]))
         write(f"genes/{g['symbol']}.json", g)
     write("pam-hunter.json", pam_hunter_rounds(genes))
+    write("guide-duel.json", guide_duel_rounds(genes))
+    write("variant-verdict.json", verdict_rounds())
+    write("codon-runner.json", codon_runner_rounds(genes))
 
     write(
         "meta.json",

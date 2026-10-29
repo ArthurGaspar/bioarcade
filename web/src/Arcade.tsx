@@ -1,7 +1,7 @@
 import { load, type Meta } from "./data";
 import { Tile, fmt, useAsync } from "./ui";
 
-/** The four cabinets. PAM Hunter is built; the rest are specified and planned. */
+/** The four cabinets, with links enabled as each game becomes playable. */
 const GAMES = [
   {
     id: "pam-hunter",
@@ -15,8 +15,8 @@ const GAMES = [
   {
     id: "guide-duel",
     name: "Guide Duel",
-    href: null,
-    status: "planned" as const,
+    href: "#/guide-duel",
+    status: "playable" as const,
     blurb: "Two real guides for the same exon, side by side. Pick the better one, then watch the score break down.",
     teaches: "Reading GC content, poly-T, the seed region and off-target counts.",
     art: <DuelArt />,
@@ -24,18 +24,18 @@ const GAMES = [
   {
     id: "variant-verdict",
     name: "Variant Verdict",
-    href: null,
-    status: "planned" as const,
-    blurb: "A real variant from a real gene. Pathogenic or benign? Clues unlock one at a time, and guessing early scores more.",
+    href: "#/variant-verdict",
+    status: "playable" as const,
+    blurb: "A real variant from a real gene. Pathogenic, benign, or uncertain? Clues unlock one at a time, and guessing early scores more.",
     teaches: "How clinical databases classify a change, and how often it is genuinely uncertain.",
     art: <VerdictArt />,
   },
   {
     id: "codon-runner",
     name: "Codon Runner",
-    href: null,
-    status: "planned" as const,
-    blurb: "Translate a real coding sequence against the clock, then delete one base and watch the protein fall apart.",
+    href: "#/codon-runner",
+    status: "playable" as const,
+    blurb: "Translate real coding sequence against the clock, then delete one base and watch the reading frame shift.",
     teaches: "The genetic code, reading frames, and why frameshifts are so destructive.",
     art: <CodonArt />,
   },

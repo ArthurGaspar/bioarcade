@@ -105,7 +105,11 @@ export function Method() {
 
       <section className="panel">
         <h2>Sources</h2>
+        <p><a href="#/codon-runner">Codon Runner</a> uses real coding windows aligned to the assembled transcript's codon boundaries. It applies the standard nuclear code. The deletion lab makes hypothetical edits, stops translation at the first stop codon and leaves incomplete triplets untranslated. Its short excerpts do not predict protein function.</p>
+        <p><a href="#/variant-verdict">Variant Verdict</a> uses a separate, curated snapshot of ClinVar records. Cases preserve the exact classification, condition scope, accession and review status. Clues are educational summaries; classifications can change. Each answer links to its source, and the snapshot review date appears in the game.</p>
         <ul style={{ paddingLeft: 20, color: "var(--ink-2)" }}>
+          <li>Variant evidence and classifications: <a href="https://www.ncbi.nlm.nih.gov/clinvar/">NCBI ClinVar</a>.</li>
+          <li>Codon translation: <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG1">NCBI standard nuclear code, table 1</a>.</li>
           <li>
             Genes and sequences: <a href="https://rest.ensembl.org">Ensembl REST</a> ({m.spacer}-base spacers, GRCh38 canonical
             transcripts).

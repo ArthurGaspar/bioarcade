@@ -1,0 +1,101 @@
+{
+  "reviewedAt": "2026-10-28",
+  "rounds": [
+    {
+      "id": "7105", "gene": "CFTR", "transcript": "NM_000492.3", "dna": "c.1521_1523del", "protein": "p.Phe508del",
+      "context": "Cystic fibrosis", "classification": "Pathogenic", "accession": "VCV000007105.213",
+      "scope": "Aggregate germline record", "reviewStatus": "Practice guidelines; also reviewed by an expert panel",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/variation/7105/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "Three DNA bases are deleted. Phenylalanine 508 is lost, but the reading frame stays intact."},
+        {"title": "Functional evidence", "text": "Experiments reported in the record show impaired CFTR function. An in-frame deletion can still damage a protein."},
+        {"title": "Clinical evidence", "text": "This is the well-studied F508del allele, repeatedly observed in people with cystic fibrosis and supported by expert review."}
+      ],
+      "explanation": "Keeping the reading frame does not guarantee a working channel. Experimental and clinical evidence support this disease-causing allele. Cystic fibrosis is recessive: the genotype matters, and one copy alone does not establish the diagnosis."
+    },
+    {
+      "id": "17662", "gene": "BRCA1", "transcript": "NM_007294.4", "dna": "c.68_69del", "protein": "p.Glu23fs",
+      "context": "Hereditary breast and ovarian cancer predisposition", "classification": "Pathogenic", "accession": "VCV000017662.188",
+      "scope": "Aggregate germline record", "reviewStatus": "Reviewed by an expert panel",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/variation/17662/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "Two bases are deleted near the start of BRCA1. The deletion shifts the reading frame."},
+        {"title": "Protein consequence", "text": "The shifted frame introduces an early stop. A shortened or absent protein fits the established loss-of-function disease mechanism."},
+        {"title": "Clinical evidence", "text": "Also called 185delAG, this founder allele has been reported in many families with inherited cancer predisposition. An expert panel has assessed it."}
+      ],
+      "explanation": "The early frameshift and extensive clinical evidence support pathogenicity. Here that means increased inherited cancer risk, not certainty that a carrier will develop cancer."
+    },
+    {
+      "id": "15333", "gene": "HBB", "transcript": "NM_000518.5", "dna": "c.20A>T", "protein": "p.Glu7Val",
+      "context": "Sickle cell disease", "classification": "Pathogenic", "accession": "VCV000015333.183",
+      "scope": "Aggregate germline record", "reviewStatus": "Criteria provided, multiple submitters, no conflicts",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/variation/15333/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "A single base substitution replaces glutamate with valine. The protein keeps its length."},
+        {"title": "Functional evidence", "text": "The altered haemoglobin can form fibres when deoxygenated, changing red-cell behaviour. A missense change can have a major effect."},
+        {"title": "Clinical evidence", "text": "This is HbS, also called Glu6Val in older numbering. Disease is associated with two HbS copies or HbS paired with certain other HBB alleles."}
+      ],
+      "explanation": "This well-established allele causes sickle cell disease in relevant two-allele combinations. A single copy usually produces sickle cell trait. Protein length and population frequency alone cannot settle pathogenicity."
+    },
+    {
+      "id": "37661", "gene": "BRCA1", "transcript": "NM_007294.4", "dna": "c.536A>G", "protein": "p.Tyr179Cys",
+      "context": "Familial breast and ovarian cancer", "classification": "Benign", "accession": "VCV000037661.97",
+      "scope": "Aggregate germline record", "reviewStatus": "Reviewed by an expert panel",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/variation/37661/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "Tyrosine is replaced with cysteine. A changed amino acid is a clue, not a verdict."},
+        {"title": "Evidence in context", "text": "The record discusses inconsistent computational predictions and observations alongside other BRCA variants. Finding a change in a cancer patient does not establish causation."},
+        {"title": "Combined evidence", "text": "An expert panel's multifactorial analysis places this variant in IARC class 1, the category used for changes not considered disease-causing."}
+      ],
+      "explanation": "The expert-panel classification is benign despite the missense consequence and some concerning experimental reports. The combined evidence carries more weight than the appearance of the sequence change alone."
+    },
+    {
+      "id": "2025079", "gene": "CFTR", "transcript": "NM_000492.4", "dna": "c.255A>G", "protein": "p.Gly85=",
+      "context": "Cystic fibrosis", "classification": "Likely benign", "accession": "VCV002025079.4",
+      "scope": "Aggregate germline record", "reviewStatus": "Criteria provided, single submitter",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/variation/2025079/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "The DNA spelling changes, but codon 85 still specifies glycine. The equals sign denotes an unchanged amino acid."},
+        {"title": "Limits of this clue", "text": "This is a synonymous variant. Such changes can sometimes affect RNA processing, so the protein notation alone cannot establish a classification."},
+        {"title": "Record assessment", "text": "The record has one criteria-based submission favouring a non-disease-causing interpretation. Its level of confidence falls short of a definitive benign assertion."}
+      ],
+      "explanation": "ClinVar records this variant as likely benign. The game groups benign and likely benign together while retaining the exact label and single-submitter review status. A synonymous change is not automatically benign."
+    },
+    {
+      "id": "93154", "gene": "CFTR", "transcript": "NM_000492.4", "dna": "c.3897A>G", "protein": "p.Thr1299=",
+      "context": "Cystic fibrosis", "classification": "Benign/Likely benign", "accession": "RCV001007581.24",
+      "scope": "Variant–condition record: cystic fibrosis", "reviewStatus": "Criteria provided, multiple submitters, no conflicts",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/RCV001007581.24/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "A DNA substitution leaves threonine 1299 unchanged. This is another synonymous variant."},
+        {"title": "Supporting observations", "text": "The wider variant record describes this change in control populations and in affected people carrying other disease-causing CFTR changes."},
+        {"title": "Condition matters", "text": "For cystic fibrosis specifically, multiple criteria-based submissions agree on the non-disease-causing side. The broader variant record includes uncertainty for a different condition."}
+      ],
+      "explanation": "For this cystic-fibrosis record, the classification is benign/likely benign. Its overall variant page has conflicting classifications across conditions. Always check which condition and record a verdict describes."
+    },
+    {
+      "id": "1010135", "gene": "BRCA2", "transcript": "NM_000059.4", "dna": "c.5942C>G", "protein": "p.Ala1981Gly",
+      "context": "Hereditary breast ovarian cancer syndrome", "classification": "Uncertain significance", "accession": "RCV001307719.9",
+      "scope": "Variant–condition record: hereditary breast ovarian cancer syndrome", "reviewStatus": "Criteria provided, single submitter",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/RCV001307719.9/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "Alanine is replaced by glycine. Both are small, neutral amino acids; this does not establish the effect on DNA repair."},
+        {"title": "Population evidence", "text": "Submissions report no population-database frequency and no published affected individuals. Absence from a database is not proof of harm."},
+        {"title": "Evidence gap", "text": "Computational modelling suggests little functional impact, but a prediction cannot settle the classification. The submission says the evidence is insufficient to resolve the disease association."}
+      ],
+      "explanation": "The evidence supports a variant of uncertain significance, not a finding of disease causation or safety. Predictions and rarity are insufficient to resolve this case."
+    },
+    {
+      "id": "7126", "gene": "CFTR", "transcript": "NM_000492.4", "dna": "c.1523T>G", "protein": "p.Phe508Cys",
+      "context": "Cystic fibrosis", "classification": "Conflicting classifications of pathogenicity", "accession": "RCV000007546.39",
+      "scope": "Variant–condition record: cystic fibrosis", "reviewStatus": "Criteria provided, conflicting classifications",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/clinvar/RCV000007546.39/",
+      "clues": [
+        {"title": "Sequence consequence", "text": "Phenylalanine 508 is replaced with cysteine. This is not the F508del deletion, even though it affects the same amino-acid position."},
+        {"title": "Interpretation", "text": "A familiar position does not transfer the classification of a different allele. The exact DNA change and its supporting evidence matter."},
+        {"title": "Submitter agreement", "text": "The cystic-fibrosis record contains differing criteria-based interpretations, including benign assertions. ClinVar reports disagreement rather than a single settled classification."}
+      ],
+      "explanation": "Conflicting classifications are different from a consensus VUS, but both belong in this game's uncertain/conflicting bucket. The correct response is to recognise the disagreement, not to take a majority vote or copy F508del's verdict."
+    }
+  ]
+}

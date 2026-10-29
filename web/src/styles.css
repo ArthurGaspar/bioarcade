@@ -146,6 +146,87 @@ p { margin: 0 0 10px; color: var(--ink-2); max-width: 78ch; }
 .legend span.key { display: inline-flex; align-items: center; gap: 6px; }
 .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--line); }
 
+/* Guide Duel */
+.duel-heading { justify-content: space-between; margin-bottom: 12px; }
+.duel-heading h2, .duel-heading h3 { margin: 0; }
+.duel-card { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); }
+.duel-winner { border-color: var(--good); box-shadow: inset 0 3px var(--good); }
+.duel-sequence { font-size: clamp(12px, 2.8vw, 18px); white-space: nowrap; letter-spacing: -0.03em; }
+.duel-sequence mark { color: var(--ink); background: color-mix(in srgb, var(--neon) 25%, var(--panel)); border-bottom: 2px solid var(--neon); }
+.duel-pam { color: var(--neon-2); font-weight: 700; margin-left: 0.5ch; }
+.duel-traits { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 16px 0; }
+.duel-traits dt { font-size: 12px; color: var(--ink-3); }
+.duel-traits dd { margin: 0; font-family: var(--mono); }
+.duel-counts { margin-bottom: 18px; }
+.duel-counts caption { text-align: left; caption-side: bottom; padding-top: 6px; }
+.duel-counts th, .duel-counts td { text-align: center; padding: 6px 3px; }
+.duel-breakdown h3 { margin-top: 16px; }
+.duel-rules { padding-left: 20px; font-size: 13px; color: var(--ink-2); }
+.duel-rules li { margin-bottom: 6px; }
+.duel-verdict { margin-top: 18px; }
+.duel-finish p { max-width: none; }
+.duel-card button:focus-visible, .duel-verdict button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+/* Variant Verdict */
+.verdict-heading { justify-content: space-between; margin-bottom: 16px; }
+.verdict-heading h2 { margin: 0; scroll-margin-top: 150px; }
+.verdict-case, .verdict-review { overflow-wrap: anywhere; }
+.verdict-protein { font-size: 22px; color: var(--neon); }
+.verdict-clues { list-style: none; padding: 0; display: grid; gap: 12px; margin: 20px 0; }
+.verdict-clues li { padding: 14px 16px; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; background: var(--panel-2); }
+.verdict-clues li p { margin: 0; }
+.verdict-clues .verdict-locked { border-left-color: var(--line); border-style: dashed; }
+.verdict-locked h3, .verdict-locked p { color: var(--ink-3); }
+.verdict-tools { margin-bottom: 18px; }
+.verdict-choices { border: 0; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.verdict-choices legend { font-weight: 600; margin-bottom: 10px; }
+.verdict-choices button { flex: 1 1 200px; border-color: var(--neon); padding: 12px; }
+.verdict-choices button:hover { background: color-mix(in srgb, var(--neon) 15%, var(--panel)); }
+.verdict-case button:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+.verdict-case button:disabled { cursor: default; opacity: 0.6; }
+.verdict-review-title { margin-top: 24px; }
+.verdict-review { display: grid; gap: 10px; }
+.verdict-review details { border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.verdict-review summary { cursor: pointer; color: var(--neon); }
+.verdict-review details[open] summary { margin-bottom: 12px; }
+
+/* Codon Runner */
+.runner-game { overflow-wrap: anywhere; }
+.runner-heading { justify-content: space-between; margin-bottom: 12px; }
+.runner-heading h2 { margin: 0; scroll-margin-top: 150px; }
+.runner-timer { display: block; width: 100%; height: 10px; accent-color: var(--neon); margin-bottom: 18px; }
+.runner-track { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.runner-triplet { display: grid; gap: 4px; text-align: center; min-width: 50px; border: 1px solid var(--line); border-radius: 7px; padding: 7px; background: var(--panel-2); }
+.runner-triplet span { font: 13px var(--mono); color: var(--ink-3); }
+.runner-current { border: 2px solid var(--neon); background: color-mix(in srgb, var(--neon) 15%, var(--panel)); }
+.runner-done { border-color: var(--good); }
+.runner-done span { color: var(--good); }
+.runner-prompt { margin-top: 20px; font-size: 20px; }
+.runner-prompt code { color: var(--neon); }
+.runner-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
+.runner-options button { text-align: left; padding: 14px; }
+.runner-options b { display: inline-block; min-width: 4ch; color: var(--neon); }
+.runner-game button:disabled { opacity: 0.55; cursor: default; }
+.runner-game button:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+.runner-feedback { min-height: 24px; }
+.runner-delete { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.runner-delete-codon { display: flex; gap: 2px; }
+.runner-delete-codon button { padding: 8px 9px; }
+.runner-delete button[aria-pressed="true"] { background: var(--panel); color: var(--bad); border-color: var(--bad); text-decoration: line-through; }
+.runner-frame { min-width: 0; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.runner-shifted { border-color: var(--neon-2); border-style: dashed; }
+.runner-stop { border: 2px solid var(--bad); }
+.runner-stop span { color: var(--bad); font-weight: 700; }
+.runner-after-stop { opacity: 0.5; }
+.runner-protein { display: block; color: var(--ink); overflow-wrap: anywhere; }
+.runner-lab-actions { margin-top: 18px; }
+.runner-stop-note { margin-top: 12px; }
+.runner-reference summary { cursor: pointer; color: var(--neon); }
+.runner-reference dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.runner-reference dt { font-size: 13px; }
+.runner-reference dd { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); }
+@media (max-width: 480px) { .runner-options { grid-template-columns: minmax(0, 1fr); } }
+
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
 .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
 .tile .v { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }

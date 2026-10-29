@@ -3,12 +3,18 @@ import { Arcade } from "./Arcade";
 import { Designer } from "./Designer";
 import { Method } from "./Method";
 import { PamHunter } from "./games/PamHunter";
+import { GuideDuel } from "./games/GuideDuel";
+import { VariantVerdict } from "./games/VariantVerdict";
+import { CodonRunner } from "./games/CodonRunner";
 
 type Theme = "system" | "light" | "dark";
 
 const PAGES = [
   { hash: "#/", label: "Arcade" },
   { hash: "#/pam-hunter", label: "PAM Hunter" },
+  { hash: "#/guide-duel", label: "Guide Duel" },
+  { hash: "#/variant-verdict", label: "Variant Verdict" },
+  { hash: "#/codon-runner", label: "Codon Runner" },
   { hash: "#/designer", label: "Designer" },
   { hash: "#/method", label: "How it works" },
 ];
@@ -65,6 +71,9 @@ export function App() {
       <main>
         {page === "#/" && <Arcade />}
         {page === "#/pam-hunter" && <PamHunter />}
+        {page === "#/guide-duel" && <GuideDuel />}
+        {page === "#/variant-verdict" && <VariantVerdict />}
+        {page === "#/codon-runner" && <CodonRunner />}
         {page === "#/designer" && <Designer />}
         {page === "#/method" && <Method />}
       </main>
