@@ -118,7 +118,12 @@ interface Rule {
 export interface Meta {
   builtAt: string;
   source: { genes: string; exome: string };
-  counts: { genes: number; guidesFound: number; guidesChecked: number; exomeSites: number };
+  counts: {
+    genes: number;
+    guidesFound: number;
+    guidesChecked: number;
+    exomeSites: number;
+  };
   method: {
     pam: string;
     spacer: number;
@@ -140,10 +145,18 @@ export function load<T>(name: string): Promise<T> {
     const url = `${import.meta.env.BASE_URL}data/${name}`;
     cache.set(
       name,
-      fetch(url).then((r) => {
-        if (!r.ok) throw new Error(`${url} answered ${r.status}. Run \`python -m pipeline.build\` first.`);
-        return r.json();
-      }),
+      fetch(url)
+        .then((r) => {
+          if (!r.ok)
+            throw new Error(
+              `Sequence data could not load (${r.status}). Refresh to try again.`,
+            );
+          return r.json();
+        })
+        .catch((error) => {
+          cache.delete(name);
+          throw error;
+        }),
     );
   }
   return cache.get(name) as Promise<T>;

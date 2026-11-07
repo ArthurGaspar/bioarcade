@@ -2,12 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { load, type Round } from "../data";
 import { Empty, useAsync } from "../ui";
 
-/**
- * Click the first base of every PAM. Cas9 only cuts where it finds NGG just
- * past the 20-base target, so finding PAMs is the first thing anyone designing
- * a guide does. Every sequence here is real coding sequence from a real gene.
- */
-
 type Phase = "ready" | "playing" | "round-over" | "finished";
 
 interface Marks {
@@ -194,7 +188,7 @@ export function PamHunter() {
               <span className="small">
                 {missed.length === 0
                   ? `Every PAM found, with ${left.toFixed(1)}s to spare (+${Math.round(left) * SPEED_BONUS}).`
-                  : `${missed.length} PAM${missed.length > 1 ? "s" : ""} missed, now marked in green.`}
+                  : `${missed.length} PAM${missed.length > 1 ? "s" : ""} missed, now marked above.`}
               </span>
             </>
           )}
@@ -202,12 +196,9 @@ export function PamHunter() {
       </section>
 
       <section className="panel">
-        <h2>Why this matters</h2>
+        <h2>Sequence notes</h2>
         <p>
-          A guide RNA is 20 bases long and must sit directly in front of a PAM, so the PAMs decide where in a gene you can cut at
-          all. Cas9 cuts 3 bases in from the PAM, which is why an edit lands where it does. In this round there{" "}
-          {targets.size === 1 ? "is 1 site" : `are ${targets.size} sites`} in {round.seq.length} bases, and the whole sequence is
-          real: {round.gene}, exon {round.exon}, from Ensembl.
+          {round.gene}, exon {round.exon} · {round.seq.length} reference bases · {targets.size} PAM sites. A SpCas9 guide uses a 20-base spacer next to a PAM; the cut falls 3 bases before the PAM. Source: Ensembl.
         </p>
       </section>
     </>

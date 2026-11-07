@@ -1,9 +1,9 @@
 # BioArcade
 
-Genomics you can play. Four arcade games about reading and editing the human genome, plus the CRISPR guide designer
-that feeds them. Reference sequences on the site are real: a Python pipeline pulls genes from Ensembl, finds every place the
-Cas9 enzyme could cut, scores the guide RNAs against published design rules, and checks each one for look-alike sites
-across the whole human exome.
+Four genomics games and a CRISPR guide workbench, built by Arthur Gaspar. A Python pipeline retrieves human reference
+sequences from Ensembl, identifies candidate SpCas9 cut sites, applies explicit sequence heuristics, and searches for
+similar sites across human protein-coding sequence. React and TypeScript turn those results into playable rounds and
+an inspectable guide collection.
 
 **Live:** https://arthurgaspar.github.io/bioarcade/
 
@@ -17,7 +17,14 @@ across the whole human exome.
 | **Guide Duel** (playable) | Twelve shuffled matchups of real guides for the same exon. Compare sequence features and off-target counts, pick the stronger candidate, then reveal both score breakdowns. |
 | **Variant Verdict** (playable) | Eight real ClinVar cases. Unlock clues and choose pathogenic, benign, or uncertain/conflicting; earlier correct verdicts earn more points. Every answer includes the exact classification and source. |
 | **Codon Runner** (playable) | Six rounds of real coding sequence, translated against the clock or in untimed practice. Delete one base after each round and compare reading frames, altered amino acids, and stops. |
-| **Guide designer** | The tool underneath. 25 analysed genes with ranked guides, every scoring decision written out, and off-target counts; or type any human gene and the browser fetches and scores it live. |
+| **Guide workbench** | Browse 25 analysed genes, filter guides by exon and score, inspect each scoring decision, copy spacers, and export the filtered results as CSV. Live Ensembl lookup scores other human genes without off-target analysis. |
+
+The arcade's gene collection searches by symbol or function and opens the corresponding workbench entry.
+Gene selections have shareable URLs, such as `#/designer?gene=BRCA1`. Each analysed entry links to its transcript,
+analysis date, and reference JSON. CSV exports include the transcript, strand, coding-region flag, sequence score,
+coding specificity, and mismatch counts; unchecked live values stay blank.
+
+![Guide workbench](docs/designer.png)
 
 ## Numbers from the current build
 

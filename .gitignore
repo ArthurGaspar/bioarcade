@@ -14,3 +14,5 @@ web/public/data/
 
 # Personal
 todo.txt
+.test-deps/
+.playwright-mcp/

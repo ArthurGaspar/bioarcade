@@ -8,40 +8,55 @@ export function Method() {
   const m = meta.method;
 
   return (
-    <>
+    <article className="field-notes">
       <section>
-        <h1>How it works</h1>
+        <p className="eyebrow">DATA / RULES / LIMITS</p>
+        <h1>Field notes</h1>
         <p>
-          Everything on this site comes from public data and a Python pipeline. No account, no key, no server: the pipeline runs
-          offline and leaves behind JSON files that GitHub Pages serves.
+          Python prepares the reference data; TypeScript runs the games and
+          scores live lookups. The analysed collection is served as static JSON.
+        </p>
+        <p className="small">
+          Built by <a href="https://github.com/ArthurGaspar">Arthur Gaspar</a> ·
+          software developer with bioinformatics research experience at UFABC.
         </p>
       </section>
 
       <section className="panel">
         <h2>The pipeline</h2>
-        <ol style={{ paddingLeft: 20, color: "var(--ink-2)", maxWidth: "78ch" }}>
+        <ol
+          style={{ paddingLeft: 20, color: "var(--ink-2)", maxWidth: "78ch" }}
+        >
           <li>
-            <b>Fetch.</b> For each gene, Ensembl's REST API gives the canonical transcript, its exons and their sequences on the
-            transcript's strand.
+            <b>Fetch.</b> For each gene, Ensembl's REST API gives the canonical
+            transcript, its exons and their sequences on the transcript's
+            strand.
           </li>
           <li>
-            <b>Assemble the coding sequence.</b> Exons are trimmed to the translated region and joined. The check that this is
-            right: the result must start with methionine, end with a stop codon, and divide evenly into codons.
+            <b>Assemble the coding sequence.</b> Exons are trimmed to the
+            translated region and joined. The check that this is right: the
+            result must start with methionine, end with a stop codon, and divide
+            evenly into codons.
           </li>
           <li>
-            <b>Find cut sites.</b> Every 20-base stretch followed by {m.pam} on either strand, keeping only those whose cut (
-            {m.cutOffsetFromPam} bases in from the PAM) lands inside the coding sequence.
+            <b>Find cut sites.</b> Every 20-base stretch followed by {m.pam} on
+            either strand, keeping only those whose cut ({m.cutOffsetFromPam}{" "}
+            bases in from the PAM) lands inside the coding sequence.
           </li>
           <li>
-            <b>Score.</b> The rules below, each one adding or removing points from a base of {m.baseScore}.
+            <b>Score.</b> The rules below, each one adding or removing points
+            from a base of {m.baseScore}.
           </li>
           <li>
-            <b>Check off-targets.</b> The best {m.checkedPerGene} guides per gene are compared against{" "}
-            {fmt.int(meta.counts.exomeSites)} sites: every NGG-adjacent 20-mer in all human protein-coding sequence, both
-            strands. Each 20-mer is packed two bits per base, so one comparison is an XOR and a bit count.
+            <b>Check off-targets.</b> The best {m.checkedPerGene} guides per
+            gene are compared against {fmt.int(meta.counts.exomeSites)} sites:
+            every NGG-adjacent 20-mer in all human protein-coding sequence, both
+            strands. Each 20-mer is packed two bits per base, so one comparison
+            is an XOR and a bit count.
           </li>
           <li>
-            <b>Build.</b> A second, offline step turns the analyses into the site's JSON and the game rounds.
+            <b>Build.</b> A second, offline step turns the analyses into the
+            site's JSON and the game rounds.
           </li>
         </ol>
       </section>
@@ -49,8 +64,10 @@ export function Method() {
       <section className="panel">
         <h2>The scoring rules</h2>
         <p>
-          A guide starts at {m.baseScore} and moves from there. This is not a trained efficiency model; it is the published
-          design guidance that most tools agree on, written out so you can disagree with it.
+          Sequence scores start at {m.baseScore}, apply these rules, and are
+          clamped to 0–100. These heuristic scores are separate from
+          coding-sequence specificity and do not predict experimental
+          efficiency.
         </p>
         <div style={{ overflowX: "auto" }}>
           <table>
@@ -64,7 +81,13 @@ export function Method() {
             <tbody>
               {m.scoreRules.map((r) => (
                 <tr key={r.id}>
-                  <td className="num" style={{ color: r.points > 0 ? "var(--gain)" : "var(--penalty)", fontWeight: 600 }}>
+                  <td
+                    className="num"
+                    style={{
+                      color: r.points > 0 ? "var(--gain)" : "var(--penalty)",
+                      fontWeight: 600,
+                    }}
+                  >
                     {r.points > 0 ? "+" : ""}
                     {r.points}
                   </td>
@@ -78,51 +101,83 @@ export function Method() {
       </section>
 
       <section className="panel">
-        <h2>What this is not</h2>
-        <ul style={{ paddingLeft: 20, color: "var(--ink-2)", maxWidth: "78ch" }}>
+        <h2>Interpretation limits</h2>
+        <ul
+          style={{ paddingLeft: 20, color: "var(--ink-2)", maxWidth: "78ch" }}
+        >
           <li>
-            <b>Not a lab tool.</b> It is a teaching toy. Real experiments use trained efficiency models and genome-wide
-            off-target searches, then validate in cells.
+            <b>Educational use.</b> Real experiments use trained efficiency
+            models and genome-wide off-target searches, then validate in cells.
           </li>
           <li>
-            <b>Off-targets cover coding sequence only.</b> Most of the genome is non-coding, and a guide can cut there too. The
-            count is a floor, not a total.
+            <b>Off-targets cover coding sequence only.</b> Most of the genome is
+            non-coding, and a guide can cut there too. The count is a floor, not
+            a total.
           </li>
           <li>
-            <b>Joined exons create a few sites that do not exist.</b> The search index is spliced coding sequence, so a handful
-            of apparent matches straddle a junction that only exists in the finished RNA.
+            <b>Joined exons create a few sites that do not exist.</b> The search
+            index is spliced coding sequence, so a handful of apparent matches
+            straddle a junction that only exists in the finished RNA.
           </li>
           <li>
-            <b>Guides that reach into a UTR or intron are invisible to the search.</b> They are marked, and their specificity
-            number should be ignored.
+            <b>
+              Guides that reach into a UTR or intron are invisible to the
+              search.
+            </b>{" "}
+            They are marked, and their specificity number should be ignored.
           </li>
           <li>
-            <b>One transcript per gene.</b> Alternative splicing is ignored, and a guide good for the canonical transcript may
-            miss another isoform.
+            <b>One transcript per gene.</b> Alternative splicing is ignored, and
+            a guide good for the canonical transcript may miss another isoform.
           </li>
         </ul>
       </section>
 
       <section className="panel">
         <h2>Sources</h2>
-        <p><a href="#/codon-runner">Codon Runner</a> uses real coding windows aligned to the assembled transcript's codon boundaries. It applies the standard nuclear code. The deletion lab makes hypothetical edits, stops translation at the first stop codon and leaves incomplete triplets untranslated. Its short excerpts do not predict protein function.</p>
-        <p><a href="#/variant-verdict">Variant Verdict</a> uses a separate, curated snapshot of ClinVar records. Cases preserve the exact classification, condition scope, accession and review status. Clues are educational summaries; classifications can change. Each answer links to its source, and the snapshot review date appears in the game.</p>
+        <p>
+          <a href="#/codon-runner">Codon Runner</a> uses real coding windows
+          aligned to the assembled transcript's codon boundaries. It applies the
+          standard nuclear code. The deletion lab makes hypothetical edits,
+          stops translation at the first stop codon and leaves incomplete
+          triplets untranslated. Its short excerpts do not predict protein
+          function.
+        </p>
+        <p>
+          <a href="#/variant-verdict">Variant Verdict</a> uses a separate,
+          curated snapshot of ClinVar records. Cases preserve the exact
+          classification, condition scope, accession and review status. Clues
+          are educational summaries; classifications can change. Each answer
+          links to its source, and the snapshot review date appears in the game.
+        </p>
         <ul style={{ paddingLeft: 20, color: "var(--ink-2)" }}>
-          <li>Variant evidence and classifications: <a href="https://www.ncbi.nlm.nih.gov/clinvar/">NCBI ClinVar</a>.</li>
-          <li>Codon translation: <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG1">NCBI standard nuclear code, table 1</a>.</li>
           <li>
-            Genes and sequences: <a href="https://rest.ensembl.org">Ensembl REST</a> ({m.spacer}-base spacers, GRCh38 canonical
-            transcripts).
+            Variant evidence and classifications:{" "}
+            <a href="https://www.ncbi.nlm.nih.gov/clinvar/">NCBI ClinVar</a>.
           </li>
           <li>
-            Off-target reference: <a href={meta.source.exome}>Ensembl human CDS FASTA</a>.
+            Codon translation:{" "}
+            <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG1">
+              NCBI standard nuclear code, table 1
+            </a>
+            .
+          </li>
+          <li>
+            Genes and sequences:{" "}
+            <a href="https://rest.ensembl.org">Ensembl REST</a> ({m.spacer}-base
+            spacers, GRCh38 canonical transcripts).
+          </li>
+          <li>
+            Off-target reference:{" "}
+            <a href={meta.source.exome}>Ensembl human CDS FASTA</a>.
           </li>
         </ul>
         <p className="small">
-          Built {new Date(meta.builtAt).toLocaleString("en-GB")}. Ensembl is released under the Apache 2.0 licence and its data
-          is free to use with attribution.
+          Site data built {new Date(meta.builtAt).toLocaleString("en-GB")}. This
+          is a build timestamp, not the date the source databases were updated.
+          Gene analysis dates are recorded in the exported JSON.
         </p>
       </section>
-    </>
+    </article>
   );
 }
